@@ -1,1 +1,12 @@
-<p>navigation works!</p>
+<nav class="fixed-nav">
+  <p-menubar [model]="items">
+    <ng-template pTemplate="start">
+      <!-- <a routerLink="/" class="nav-logo"> -->
+      <img src="assets/images/naturally-dance-logo.jpg" alt="Naturally Dance Logo" height="40" />
+      <!-- </a> -->
+    </ng-template>
+    <!-- <ng-template pTemplate="end">
+      <h1>{{ 'navigation.home' | transloco }}</h1>
+    </ng-template> -->
+  </p-menubar>
+</nav>
