@@ -31,7 +31,7 @@ export class LanguageSwitcher {
     this.selectedLanguage = this.languages.find((lang) => lang.value === currentLanguage) || this.languages[0]
   }
 
-  swithchLanguage () {
+  switchLanguage () {
     if (this.selectedLanguage) {
       this.languageService.switchLanguage(this.selectedLanguage.value)
     }
