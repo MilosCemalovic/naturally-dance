@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection, isDevMode, APP_INITIALIZER, provideAppInitializer, inject } from '@angular/core'
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection, isDevMode, provideAppInitializer, inject } from '@angular/core'
 import { provideRouter } from '@angular/router'
 import { provideHttpClient } from '@angular/common/http'
 import { provideTransloco, TranslocoService } from '@jsverse/transloco'
@@ -7,6 +7,7 @@ import { providePrimeNG } from 'primeng/config'
 import { lastValueFrom } from 'rxjs'
 import { TranslocoHttpLoader } from './transloco-loader'
 import { routes } from './app.routes'
+import { provideNoopAnimations } from '@angular/platform-browser/animations'
 
 // Factory function for initializing Transloco
 export function initializeTransloco () {
@@ -18,6 +19,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
+    provideNoopAnimations(),
     provideRouter(routes),
     provideHttpClient(),
     providePrimeNG({
@@ -36,6 +38,7 @@ export const appConfig: ApplicationConfig = {
       config: {
         availableLangs: ['en', 'rs'],
         defaultLang: 'en',
+        fallbackLang: 'en',
         // Remove this option if your application doesn't support changing language in runtime.
         reRenderOnLangChange: true,
         prodMode: !isDevMode(),
