@@ -1,25 +1,44 @@
 import { CommonModule } from '@angular/common'
-import { Component, } from '@angular/core'
+import { Component, OnDestroy, OnInit, } from '@angular/core'
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco'
 import { MenubarModule } from 'primeng/menubar'
+import { LanguageSwitcher } from "../language-switcher/language-switcher"
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-navigation',
   standalone: true,
-  imports: [MenubarModule, CommonModule, TranslocoModule],
+  imports: [MenubarModule, CommonModule, TranslocoModule, LanguageSwitcher],
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss'
 })
-export class Navigation {
+export class Navigation implements OnInit, OnDestroy {
   items: any[] = []
 
-  constructor(private transloco: TranslocoService) {
-    // Translations are preloaded, so this should work fine
+  private langChangeSubscription: Subscription | null = null
+
+  constructor(private transloco: TranslocoService) {}
+
+  ngOnInit (): void {
+    this.updateNavigationItems()
+
+    this.langChangeSubscription = this.transloco.langChanges$.subscribe(() => {
+      this.updateNavigationItems()
+    })
+  }
+
+  updateNavigationItems () {
     this.items = [
       { label: this.transloco.translate('navigation.home'), icon: 'pi pi-home' },
       { label: this.transloco.translate('navigation.about'), icon: 'pi pi-info-circle' },
       { label: this.transloco.translate('navigation.projects'), icon: 'pi pi-trophy' }
     ]
+  }
+
+  ngOnDestroy (): void {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe()
+    }
   }
 
 }
