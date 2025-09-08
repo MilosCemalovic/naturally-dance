@@ -21,9 +21,9 @@ export class Navigation implements OnInit, OnDestroy {
 
   ngOnInit (): void {
     this.langChangeSubscription = this.transloco.langChanges$.pipe(
-      startWith(this.transloco.getActiveLang())
+      startWith(this.transloco.getActiveLang()) // Include current language immediately
     ).subscribe(() => {
-      this.updateNavigationItems()
+      this.updateNavigationItems() // Re-translates navigation when language changes
     })
   }
 
