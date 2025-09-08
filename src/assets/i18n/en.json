@@ -3,5 +3,9 @@
     "home": "Home",
     "about": "About Us",
     "projects": "Projects"
+  },
+  "footer": {
+    "contact": "Contact",
+    "rights": "All rights reserved."
   }
 }

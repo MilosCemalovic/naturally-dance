@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component } from '@angular/core'
+import { TranslocoModule } from '@jsverse/transloco'
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [TranslocoModule],
   templateUrl: './footer.html',
   styleUrl: './footer.scss'
 })

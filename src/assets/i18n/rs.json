@@ -3,5 +3,9 @@
     "home": "Početna",
     "about": "O Nama",
     "projects": "Projekti"
+  },
+  "footer": {
+    "contact": "Kontakt",
+    "rights": "Sva prava su zadržana."
   }
 }
