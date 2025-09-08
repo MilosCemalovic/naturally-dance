@@ -1,12 +1,14 @@
 <nav class="fixed-nav">
-  <p-menubar [model]="items">
-    <ng-template pTemplate="start">
-      <!-- <a routerLink="/" class="nav-logo"> -->
-      <img src="assets/images/naturally-dance-logo.jpg" alt="Naturally Dance Logo" height="40" />
-      <!-- </a> -->
-    </ng-template>
-    <ng-template pTemplate="end">
-      <app-language-switcher></app-language-switcher>
-    </ng-template>
-  </p-menubar>
+  <div>
+    <p-menubar [model]="items">
+      <ng-template pTemplate="start">
+        <span class="nav-logo" (click)="navigateToHome()">
+          <img src="assets/images/naturally-dance-logo.jpg" alt="Naturally Dance Logo" height="50" />
+        </span>
+      </ng-template>
+      <ng-template pTemplate="end">
+        <app-language-switcher></app-language-switcher>
+      </ng-template>
+    </p-menubar>
+  </div>
 </nav>

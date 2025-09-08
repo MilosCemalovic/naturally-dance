@@ -4,6 +4,7 @@ import { TranslocoModule, TranslocoService } from '@jsverse/transloco'
 import { MenubarModule } from 'primeng/menubar'
 import { LanguageSwitcher } from "../language-switcher/language-switcher"
 import { startWith, Subscription } from 'rxjs'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-navigation',
@@ -17,7 +18,7 @@ export class Navigation implements OnInit, OnDestroy {
 
   private langChangeSubscription: Subscription | null = null
 
-  constructor(private transloco: TranslocoService) {}
+  constructor(private transloco: TranslocoService, private router: Router) {}
 
   ngOnInit (): void {
     this.langChangeSubscription = this.transloco.langChanges$.pipe(
@@ -33,6 +34,10 @@ export class Navigation implements OnInit, OnDestroy {
       { label: this.transloco.translate('navigation.about'), icon: 'pi pi-info-circle', routerLink: '/about' },
       { label: this.transloco.translate('navigation.projects'), icon: 'pi pi-trophy', routerLink: '/projects' }
     ]
+  }
+
+  navigateToHome () {
+    this.router.navigate(['/'])
   }
 
   ngOnDestroy (): void {
