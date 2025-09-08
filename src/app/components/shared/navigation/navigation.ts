@@ -29,9 +29,9 @@ export class Navigation implements OnInit, OnDestroy {
 
   updateNavigationItems () {
     this.items = [
-      { label: this.transloco.translate('navigation.home'), icon: 'pi pi-home' },
-      { label: this.transloco.translate('navigation.about'), icon: 'pi pi-info-circle' },
-      { label: this.transloco.translate('navigation.projects'), icon: 'pi pi-trophy' }
+      { label: this.transloco.translate('navigation.home'), icon: 'pi pi-home', routerLink: '/' },
+      { label: this.transloco.translate('navigation.about'), icon: 'pi pi-info-circle', routerLink: '/about' },
+      { label: this.transloco.translate('navigation.projects'), icon: 'pi pi-trophy', routerLink: '/projects' }
     ]
   }
 
