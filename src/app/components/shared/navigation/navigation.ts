@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit, } from '@angular/core'
 import { TranslocoModule, TranslocoService } from '@jsverse/transloco'
 import { MenubarModule } from 'primeng/menubar'
 import { LanguageSwitcher } from "../language-switcher/language-switcher"
-import { Subscription } from 'rxjs'
+import { startWith, Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-navigation',
@@ -20,9 +20,9 @@ export class Navigation implements OnInit, OnDestroy {
   constructor(private transloco: TranslocoService) {}
 
   ngOnInit (): void {
-    this.updateNavigationItems()
-
-    this.langChangeSubscription = this.transloco.langChanges$.subscribe(() => {
+    this.langChangeSubscription = this.transloco.langChanges$.pipe(
+      startWith(this.transloco.getActiveLang())
+    ).subscribe(() => {
       this.updateNavigationItems()
     })
   }
