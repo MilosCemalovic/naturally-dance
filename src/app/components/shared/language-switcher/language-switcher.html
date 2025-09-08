@@ -1,7 +1,6 @@
 <div class="language-switcher" animate.enter="fade-in">
   <p-select [options]="languages" [(ngModel)]="selectedLanguage" optionLabel="label"
-    (onChange)="switchLanguageHandler()" [showClear]="false" placeholder="Select Language"
-    [style]="{'min-width':'150px'}">
+    (onChange)="switchLanguageHandler()" [showClear]="false" [style]="{'min-width':'150px'}">
     <ng-template #selectedItem>
       <div class="flex items-center gap-2">
         <span [class]="'fi fi-' + selectedLanguage.countryCode"></span>
