@@ -8,6 +8,88 @@
     "title": "Naturally Dance",
     "description": "is a dance association that promotes dance! We prepare participants for the dance floor in a relaxed and pleasant atmosphere. We organize Dance and Disco Parties, dance lessons, dance workshops, humanitarian actions through dance and other interesting activities. With us you will master elegant Ballroom, hot Caribbean and Latin rhythms, as well as African Kizomba. We have hosted the masters of this African dance and we transfer the materials from all the dance seminars to you in our dance classes."
   },
+  "dances": {
+    "title": "The dances you can learn with us:",
+    "list": "Samba • Rumba • Cha Cha Cha • English Waltz • Viennese Waltz • Foxtrot • Salsa • Bachata • Kizomba • Blues • Disco • Jive • R'n'R • Merengue • Sirtaki • Group choreography and more! 😃"
+  },
+  "category": "Category",
+  "dancesList": {
+    "samba": {
+      "name": "Samba",
+      "category": "Latin",
+      "description": "A lively Brazilian dance with African roots, characterized by rapid steps and rhythmic hip movements"
+    },
+    "rumba": {
+      "name": "Rumba",
+      "category": "Latin",
+      "description": "A slow, romantic Cuban dance often called the 'dance of love'"
+    },
+    "chaChaCha": {
+      "name": "Cha Cha Cha",
+      "category": "Latin",
+      "description": "A playful, flirtatious dance with Cuban origins, characterized by its syncopated steps"
+    },
+    "jive": {
+      "name": "Jive",
+      "category": "Latin",
+      "description": "An energetic dance based on swing with fast kicks and flicks"
+    },
+    "englishWaltz": {
+      "name": "English Waltz",
+      "category": "Standard",
+      "description": "A smooth, elegant ballroom dance in 3/4 time with long, flowing movements"
+    },
+    "vienneseWaltz": {
+      "name": "Viennese Waltz",
+      "category": "Standard",
+      "description": "A faster version of the waltz with continuous turns and rotational movements"
+    },
+    "foxtrot": {
+      "name": "Foxtrot",
+      "category": "Standard",
+      "description": "A smooth, progressive dance characterized by long, continuous flowing movements"
+    },
+    "salsa": {
+      "name": "Salsa",
+      "category": "Caribbean",
+      "description": "A lively partner dance with Cuban and Puerto Rican roots, featuring intricate turn patterns"
+    },
+    "bachata": {
+      "name": "Bachata",
+      "category": "Caribbean",
+      "description": "A romantic dance from the Dominican Republic with simple steps and sensual hip motion"
+    },
+    "merengue": {
+      "name": "Merengue",
+      "category": "Caribbean",
+      "description": "A simple, fun dance from the Dominican Republic with a marching rhythm"
+    },
+    "kizomba": {
+      "name": "Kizomba",
+      "category": "African",
+      "description": "A sensual, smooth partner dance from Angola with close connection and subtle movements"
+    },
+    "blues": {
+      "name": "Blues",
+      "category": "Social",
+      "description": "A slow, expressive dance focused on musicality and connection between partners"
+    },
+    "disco": {
+      "name": "Disco",
+      "category": "Social",
+      "description": "A high-energy dance style popularized in the 1970s with flashy moves and rhythmic steps"
+    },
+    "rnr": {
+      "name": "Rock 'n' Roll",
+      "category": "Social",
+      "description": "Rock and Roll dance with acrobatic elements and lively movements"
+    },
+    "sirtaki": {
+      "name": "Sirtaki",
+      "category": "Greek",
+      "description": "A popular Greek dance that starts slow and gradually increases in pace"
+    }
+  },
   "footer": {
     "contact": "Contact",
     "rights": "All rights reserved."

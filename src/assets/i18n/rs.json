@@ -8,6 +8,88 @@
     "title": "Naturally Dance",
     "description": "je plesno (u)druženje koje se bavi promocijom plesa! Mi u opuštenoj i prijatnoj atmosferi polaznike pripremamo za plesne podijume. Organizujemo Plesne i Disko Žurke, humanitarne akcije kroz ples, plesne radionice, časove plesa i druge zanimljive aktivnosti. Sa nama ćete savladati elegantne standarde, vruće karipske i latino ritmove, kao i afričku kizombu. Ugostili smo majstore ovog afričkog plesa i materijale sa svih plesnih seminara prenosimo vama na časovima."
   },
+  "dances": {
+    "title": "Plesovi koje možete naučiti kod nas:",
+    "list": "Samba • Rumba • Ča Ča Ča • Engleski valcer • Bečki valcer • Fokstrot • Salsa • Baćata • Kizomba • Bluz • Disko • Džajv • Rokenrol • Merenge • Sirtaki • Grupne koreografije i još mnogo toga! 😃"
+  },
+  "category": "Kategorija",
+  "dancesList": {
+    "samba": {
+      "name": "Samba",
+      "category": "Latino",
+      "description": "Živahan brazilski ples sa afričkim korenima, karakterišu ga brzi koraci i ritmički pokreti kukova"
+    },
+    "rumba": {
+      "name": "Rumba",
+      "category": "Latino",
+      "description": "Spor, romantičan kubanski ples koji se često naziva 'plesom ljubavi'"
+    },
+    "chaChaCha": {
+      "name": "Ča Ča Ča",
+      "category": "Latino",
+      "description": "Razigran, koketan ples kubanskog porekla, karakterišu ga sinkopirani koraci"
+    },
+    "jive": {
+      "name": "Džajv",
+      "category": "Latino",
+      "description": "Energetičan ples baziran na swing-u sa brzim udarcima i trzajima"
+    },
+    "englishWaltz": {
+      "name": "Engleski valcer",
+      "category": "Standard",
+      "description": "Glatki, elegantan ples u salonskom ritmu u 3/4 taktu sa dugim, tečnim pokretima"
+    },
+    "vienneseWaltz": {
+      "name": "Bečki valcer",
+      "category": "Standard",
+      "description": "Brža verzija valcera sa kontinuiranim okretima i rotacionim pokretima"
+    },
+    "foxtrot": {
+      "name": "Fokstrot",
+      "category": "Standard",
+      "description": "Glatki, progresivni ples karakterisan dugim, kontinuiranim tečnim pokretima"
+    },
+    "salsa": {
+      "name": "Salsa",
+      "category": "Karipski",
+      "description": "Živahan partnerski ples sa kubanskim i portorikanskim korenima, sa složenim obrascima okreta"
+    },
+    "bachata": {
+      "name": "Baćata",
+      "category": "Karipski",
+      "description": "Romantičan ples iz Dominikanske Republike sa jednostavnim koracima i senzualnim pokretima kukova"
+    },
+    "merengue": {
+      "name": "Merenge",
+      "category": "Karipski",
+      "description": "Jednostavan, zabavan ples iz Dominikanske Republike sa marširajućim ritmom"
+    },
+    "kizomba": {
+      "name": "Kizomba",
+      "category": "Afrički",
+      "description": "Senzualan, glatki partnerski ples iz Angole sa bliskom vezom i suptilnim pokretima"
+    },
+    "blues": {
+      "name": "Bluz",
+      "category": "Društveni",
+      "description": "Spor, izražajni ples fokusiran na muzikalnost i vezu između partnera"
+    },
+    "disco": {
+      "name": "Disko",
+      "category": "Društveni",
+      "description": "Ples stil sa visokom energijom popularizovan 1970-ih sa upadljivim pokretima i ritmičkim koracima"
+    },
+    "rnr": {
+      "name": "Rokenrol",
+      "category": "Društveni",
+      "description": "Rok en rol ples sa akrobatskim elementima i živahnim pokretima"
+    },
+    "sirtaki": {
+      "name": "Sirtaki",
+      "category": "Grički",
+      "description": "Popularni grčki ples koji počinje sporo i postepeno ubrzava"
+    }
+  },
   "footer": {
     "contact": "Kontakt",
     "rights": "Sva prava su zadržana."
