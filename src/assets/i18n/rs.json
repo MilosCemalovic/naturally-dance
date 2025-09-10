@@ -4,6 +4,10 @@
     "about": "O Nama",
     "projects": "Projekti"
   },
+  "header": {
+    "title": "Naturally Dance",
+    "description": "je plesno (u)druženje koje se bavi promocijom plesa! Mi u opuštenoj i prijatnoj atmosferi polaznike pripremamo za plesne podijume. Organizujemo Plesne i Disko Žurke, humanitarne akcije kroz ples, plesne radionice, časove plesa i druge zanimljive aktivnosti. Sa nama ćete savladati elegantne standarde, vruće karipske i latino ritmove, kao i afričku kizombu. Ugostili smo majstore ovog afričkog plesa i materijale sa svih plesnih seminara prenosimo vama na časovima."
+  },
   "footer": {
     "contact": "Kontakt",
     "rights": "Sva prava su zadržana."

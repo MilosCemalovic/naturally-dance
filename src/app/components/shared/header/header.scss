@@ -1,0 +1,29 @@
+.header {
+  padding: 1rem 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+
+  &-container {
+    padding: 0 2rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+.logo-section {
+  &__img {
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
+  }
+}
+
+.title-section {
+  line-height: 1;
+
+  p {
+    margin-top: -0.5rem;
+  }
+}
