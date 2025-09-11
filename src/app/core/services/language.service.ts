@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core'
 import { TranslocoService } from '@jsverse/transloco'
-import { firstValueFrom } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +9,8 @@ export class LanguageService {
 
   constructor(private transloco: TranslocoService) {}
 
-  async switchLanguage (language: string) {
-    console.log('Switching language to - log from language.service.ts:', language)
-
-    // Load translations before activating the language
-    await firstValueFrom(this.transloco.load(language))
+  switchLanguage (language: string) {
+    console.log('Log from language.service.ts - Switching language to:', language)
 
     this.transloco.setActiveLang(language)
 
