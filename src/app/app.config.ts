@@ -7,7 +7,7 @@ import { providePrimeNG } from 'primeng/config'
 import { lastValueFrom } from 'rxjs'
 import { TranslocoHttpLoader } from './transloco-loader'
 import { routes } from './app.routes'
-import { provideNoopAnimations } from '@angular/platform-browser/animations'
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async'
 
 // Factory function for initializing Transloco
 export function initializeTransloco () {
@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideNoopAnimations(),
+    provideAnimationsAsync(),
     provideRouter(routes),
     provideHttpClient(),
     providePrimeNG({

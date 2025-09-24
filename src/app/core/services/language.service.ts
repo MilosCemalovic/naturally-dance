@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core'
 import { TranslocoService } from '@jsverse/transloco'
+import { LoadingService } from './loading.service'
 
 @Injectable({
   providedIn: 'root'
@@ -7,14 +8,24 @@ import { TranslocoService } from '@jsverse/transloco'
 export class LanguageService {
   private readonly storageKey = 'preferredLanguage'
 
-  constructor(private transloco: TranslocoService) {}
+  constructor(private transloco: TranslocoService, private loadingService: LoadingService) {}
 
   switchLanguage (language: string) {
-    console.log('Log from language.service.ts - Switching language to:', language)
+    // Set the loading spinner
+    this.loadingService.show()
 
-    this.transloco.setActiveLang(language)
+    setTimeout(() => {
+      try {
+        console.log('Log from language.service.ts - Switching language to:', language)
 
-    localStorage.setItem(this.storageKey, language)
+        this.transloco.setActiveLang(language)
+        localStorage.setItem(this.storageKey, language)
+      } catch (error) {
+        console.log('Failed to switch language: ', error)
+      } finally {
+        this.loadingService.hide()
+      }
+    }, 100)
   }
 
   getCurrentLanguage (): string {
