@@ -90,6 +90,16 @@
       "description": "Popularni grčki ples koji počinje sporo i postepeno ubrzava"
     }
   },
+  "teachers": {
+    "milos": {
+      "title": "Miloš Ćemalović, osnivač i plesni profesor Naturally Dance",
+      "description": "Oduvek je bio veliki ljubitelj muzike, organizovao na stotine plesnih događaja na raznim mestima, bio DJ na plesnim žurkama, animirao ljude oko sebe kao i kreirao mikseve različite muzike."
+    },
+    "sandra": {
+      "title": "Sandra Svetlica Ćemalović, menadžer i plesni profesor Naturally Dance",
+      "description": "Diplomirala je sociologiju na Filozofskom fakultetu Univerziteta u Beogradu. Celog života se interesovala za ples, a njen veliki talenat i ljubav prema plesu otkrio je Miloš 2015. godine."
+    }
+  },
   "footer": {
     "contact": "Kontakt",
     "rights": "Sva prava su zadržana."

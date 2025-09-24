@@ -90,6 +90,16 @@
       "description": "A popular Greek dance that starts slow and gradually increases in pace"
     }
   },
+  "teachers": {
+    "milos": {
+      "title": "Miloš Ćemalović, Naturally Dance founder and dance teacher",
+      "description": "Has always been a big fan of music, organized hundreds of dance events in various places, being a DJ on dance parties, animated the people around him as well as created music mixes of different genres."
+    },
+    "sandra": {
+      "title": "Sandra Svetlica Ćemalović, Naturally Dance manager and dance teacher",
+      "description": "Graduated in Sociology at the Faculty of Philosophy, University of Belgrade. All her life she was interested in dance, and her great talent and love for dance was discovered by Miloš in 2015."
+    }
+  },
   "footer": {
     "contact": "Contact",
     "rights": "All rights reserved."

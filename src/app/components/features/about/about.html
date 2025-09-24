@@ -1,1 +1,23 @@
-<p>about works!</p>
+<div class="container">
+  <p-card header="{{ 'teachers.milos.title' | transloco}}">
+    <div class="card-content">
+      <img src="assets/images/milos-cemalovic-small.jpg" srcset="assets/images/milos-cemalovic-small.jpg 300w, assets/images/milos-cemalovic.jpg 600w,
+      " sizes="(max-width: 600px) 300px, 600px" alt="Miloš Ćemalović image" loading="lazy" class="card-image">
+      <div class="card-text">
+        <p> {{ 'teachers.milos.description' | transloco}} </p>
+      </div>
+    </div>
+  </p-card>
+
+  <p-card header="{{ 'teachers.sandra.title' | transloco}}">
+    <div class="card-content">
+      <img src="assets/images/sandra-svetlica-small.jpg"
+        srcset="assets/images/sandra-svetlica-tiny.jpg 150w, assets/images/sandra-svetlica-small.jpg 300w, assets/images/sandra-svetlica.jpg 600w"
+        sizes="(max-width: 400px) 150px, (max-width: 800px) 300px, 600px" alt="Sandra Svetlica image" loading="lazy"
+        class="card-image">
+      <div class="card-text">
+        <p> {{ 'teachers.sandra.description' | transloco}} </p>
+      </div>
+    </div>
+  </p-card>
+</div>
