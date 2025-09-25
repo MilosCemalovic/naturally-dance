@@ -27,3 +27,29 @@
     margin-top: -0.5rem;
   }
 }
+
+@media (max-width: 600px) {
+  .header {
+    padding: 0.5rem 0;
+
+    &-container {
+      padding: 0.8rem;
+      margin: 0;
+      flex-direction: column;
+      gap: 0rem;
+    }
+  }
+
+  .title-section {
+    text-align: justify;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .logo-section__img {
+    margin-top: 1rem;
+    height: 60px;
+  }
+}
