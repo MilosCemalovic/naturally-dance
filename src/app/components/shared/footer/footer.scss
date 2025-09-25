@@ -5,14 +5,13 @@
 
   .container {
     max-width: 1200px;
-    // margin: 0 auto;
     padding: 1rem 2rem;
     box-sizing: border-box;
+  }
 
-    h3 {
-      margin-bottom: 2rem;
-      font-size: 1.5rem;
-    }
+  &__heading {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
   }
 
   &__copyright {
@@ -24,10 +23,73 @@
     text-decoration: none;
     transition: color 0.3e ease;
     margin: 0.5rem 0;
+    font-size: 1.2rem;
 
     &:hover {
       color: #1abc9c;
       text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .footer {
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    &__heading {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    &__text {
+      margin: 0;
+    }
+
+    &__link {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    &__copyright {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    &__heading {
+      font-size: 1rem;
+    }
+
+    &__link {
+      font-size: 0.9rem;
+    }
+
+    &__copyright {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    &__heading {
+      font-size: 0.9rem;
+    }
+
+    &__link {
+      font-size: 0.8rem;
+    }
+
+    &__copyright {
+      font-size: 0.7rem;
     }
   }
 }
