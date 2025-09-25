@@ -23,6 +23,6 @@ export class Home implements OnInit {
   ngOnInit (): void {
     setTimeout(() => {
       this.danceDataService.loadDances().subscribe()
-    }, 5000)
+    }, 1000)
   }
 }

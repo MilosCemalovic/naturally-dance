@@ -4,18 +4,15 @@
   margin: 0 auto;
 }
 
-.section-title {
+.section-title h2 {
   text-align: center;
   margin-bottom: 2rem;
-
-  h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-  }
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
 }
 
-.text-center {
+.dance-list {
   text-align: center;
   font-size: 1.2rem;
   line-height: 1.6;
@@ -35,38 +32,67 @@
   &:hover {
     transform: translateY(-5px);
   }
-}
 
-.custom-header {
-  text-align: center;
-  color: red;
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-}
+  &__wrapper {
+    display: grid;
+    justify-items: center;
+  }
 
-.category {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #667eea;
+  &__header {
+    text-align: center;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__category {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #667eea;
+  }
 }
 
 // Mobile optimization
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .container {
-    padding: 1rem;
+    padding: 0.5rem;
+  }
+
+  .dance-list {
+    font-size: 1rem;
+    line-height: 1;
   }
 
   .grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
   }
 
   .dance-card {
     height: auto; // Allow natural height on mobile
+
+    &__header {
+      margin: 0;
+    }
+
+    &__description {
+      text-align: center;
+    }
   }
 
   .section-title h2 {
     font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.2rem;
+  }
+
+  .section-title h2 {
+    font-size: 1.5rem;
   }
 }

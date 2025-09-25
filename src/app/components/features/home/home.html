@@ -6,18 +6,20 @@
   </div>
 
   <p-card>
-    <p class="text-center">{{'dances.list' | transloco}}</p>
+    <p class="dance-list">{{'dances.list' | transloco}}</p>
   </p-card>
 
   <div class="grid">
     @for (dance of dances$ | async; track $index) {
     <p-card class="dance-card">
-      <div class="custom-header">
-        {{dance.name | transloco}}
-      </div>
+      <div class="dance-card__wrapper">
+        <div class="dance-card__header">
+          {{dance.name | transloco}}
+        </div>
 
-      <p class="category">{{'category' | transloco}} - {{dance.category | transloco}}</p>
-      <p>{{dance.descriptionKey | transloco}}</p>
+        <p class="dance-card__category">{{'category' | transloco}} - {{dance.category | transloco}}</p>
+        <p class="dance-card__description">{{dance.descriptionKey | transloco}}</p>
+      </div>
     </p-card>
     }
   </div>
