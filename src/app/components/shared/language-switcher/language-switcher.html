@@ -4,14 +4,18 @@
     <ng-template #selectedItem>
       <div class="flex items-center gap-2">
         <span [class]="'fi fi-' + selectedLanguage.countryCode"></span>
+        @if (!isMobile) {
         <span> {{ selectedLanguage.label }}</span>
+        }
       </div>
     </ng-template>
 
     <ng-template let-language #item>
       <div class="flex items-center gap-2">
         <span [class]="'fi fi-' + language.countryCode"></span>
+        @if (!isMobile) {
         <span> {{ language.label }}</span>
+        }
       </div>
     </ng-template>
   </p-select>

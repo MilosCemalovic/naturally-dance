@@ -1,9 +1,10 @@
 import { CommonModule } from '@angular/common'
-import { Component } from '@angular/core'
+import { Component, OnInit } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { TranslocoService } from '@jsverse/transloco'
 import { SelectModule } from 'primeng/select'
 import { LanguageService } from '../../../core/services/language.service'
+import { ResponsiveService } from '../../../core/services/responsive.service'
 
 interface LanguageOption {
   label: string
@@ -18,17 +19,24 @@ interface LanguageOption {
   templateUrl: './language-switcher.html',
   styleUrl: './language-switcher.scss'
 })
-export class LanguageSwitcher {
+export class LanguageSwitcher implements OnInit {
   languages: LanguageOption[] = [
     { label: 'English', value: 'en', countryCode: 'gb' },
     { label: 'Srpski', value: 'rs', countryCode: 'rs' },
   ]
 
   selectedLanguage: LanguageOption
+  isMobile = false
 
-  constructor(private transloco: TranslocoService, private languageService: LanguageService) {
+  constructor(private transloco: TranslocoService, private languageService: LanguageService, private responsiveService: ResponsiveService) {
     const currentLanguage = this.transloco.getActiveLang()
     this.selectedLanguage = this.languages.find((lang) => lang.value === currentLanguage) || this.languages[0]
+  }
+
+  ngOnInit (): void {
+    this.responsiveService.isMobile$.subscribe((isMobile) => {
+      this.isMobile = isMobile
+    })
   }
 
   switchLanguageHandler () {
