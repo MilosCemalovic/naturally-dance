@@ -9,16 +9,18 @@ export class ResponsiveService {
 
   public isMobile$ = this.isMobileSubject.asObservable()
 
+  private mobileWidth = window.innerWidth <= 900
+
   constructor() {
     this.checkScreensSize()
     window.addEventListener('resize', () => this.checkScreensSize())
   }
 
   private checkScreensSize () {
-    this.isMobileSubject.next(window.innerWidth <= 900)
+    this.isMobileSubject.next(this.mobileWidth)
   }
 
   get isMobile (): boolean {
-    return window.innerWidth <= 900
+    return this.mobileWidth
   }
 }
