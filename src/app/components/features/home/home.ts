@@ -1,8 +1,8 @@
 import { TranslocoModule } from '@jsverse/transloco'
-import { Component, OnInit } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { AsyncPipe, CommonModule } from '@angular/common'
 import { CardModule } from 'primeng/card'
-import { Observable } from 'rxjs'
+import { Observable, Subscription } from 'rxjs'
 import { Header } from "../../shared/header/header"
 import { DanceDataService } from '../../../core/services/dance-data.service'
 
@@ -13,8 +13,9 @@ import { DanceDataService } from '../../../core/services/dance-data.service'
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
-export class Home implements OnInit {
+export class Home implements OnInit, OnDestroy {
   dances$: Observable<any>
+  private subscription: Subscription | null = null
 
   constructor(private danceDataService: DanceDataService) {
     this.dances$ = this.danceDataService.dances$
@@ -22,7 +23,11 @@ export class Home implements OnInit {
 
   ngOnInit (): void {
     setTimeout(() => {
-      this.danceDataService.loadDances().subscribe()
+      this.subscription = this.danceDataService.loadDances().subscribe()
     }, 1000)
+  }
+
+  ngOnDestroy () {
+    this.subscription && this.subscription.unsubscribe()
   }
 }
