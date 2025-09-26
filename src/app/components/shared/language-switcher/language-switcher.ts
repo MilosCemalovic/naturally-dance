@@ -1,5 +1,6 @@
+import { Subscription } from 'rxjs'
 import { CommonModule } from '@angular/common'
-import { Component, OnInit } from '@angular/core'
+import { Component, OnDestroy, OnInit } from '@angular/core'
 import { FormsModule } from '@angular/forms'
 import { TranslocoService } from '@jsverse/transloco'
 import { SelectModule } from 'primeng/select'
@@ -19,7 +20,7 @@ interface LanguageOption {
   templateUrl: './language-switcher.html',
   styleUrl: './language-switcher.scss'
 })
-export class LanguageSwitcher implements OnInit {
+export class LanguageSwitcher implements OnInit, OnDestroy {
   languages: LanguageOption[] = [
     { label: 'English', value: 'en', countryCode: 'gb' },
     { label: 'Srpski', value: 'rs', countryCode: 'rs' },
@@ -27,6 +28,7 @@ export class LanguageSwitcher implements OnInit {
 
   selectedLanguage: LanguageOption
   isMobile = false
+  private subscription: Subscription | null = null
 
   constructor(private transloco: TranslocoService, private languageService: LanguageService, private responsiveService: ResponsiveService) {
     const currentLanguage = this.transloco.getActiveLang()
@@ -34,14 +36,16 @@ export class LanguageSwitcher implements OnInit {
   }
 
   ngOnInit (): void {
-    this.responsiveService.isMobile$.subscribe((isMobile) => {
+    this.subscription = this.responsiveService.isMobile$.subscribe((isMobile) => {
       this.isMobile = isMobile
     })
   }
 
   switchLanguageHandler () {
-    if (this.selectedLanguage) {
-      this.languageService.switchLanguage(this.selectedLanguage.value)
-    }
+    this.selectedLanguage && this.languageService.switchLanguage(this.selectedLanguage.value)
+  }
+
+  ngOnDestroy () {
+    this.subscription && this.subscription.unsubscribe()
   }
 }

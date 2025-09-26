@@ -34,9 +34,8 @@ export class Navigation implements OnInit, OnDestroy {
 
     // Subscribe to translation load events to update navigation items when new translations are loaded
     this.translationLoadSubscription = this.transloco.events$.subscribe((event) => {
-      if (event.type === 'translationLoadSuccess') {
-        this.updateNavigationItems() // Re-translates navigation when new translations are loaded
-      }
+      // Re-translates navigation when new translations are loaded
+      event.type === 'translationLoadSuccess' && this.updateNavigationItems()
     })
   }
 
@@ -55,13 +54,9 @@ export class Navigation implements OnInit, OnDestroy {
   }
 
   ngOnDestroy (): void {
-    if (this.langChangeSubscription) {
-      this.langChangeSubscription.unsubscribe()
-    }
+    this.langChangeSubscription && this.langChangeSubscription.unsubscribe()
 
-    if (this.translationLoadSubscription) {
-      this.translationLoadSubscription.unsubscribe()
-    }
+    this.translationLoadSubscription && this.translationLoadSubscription.unsubscribe()
   }
 
 }
