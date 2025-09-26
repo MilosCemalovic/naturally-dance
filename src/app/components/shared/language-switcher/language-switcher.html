@@ -4,7 +4,7 @@
     <ng-template #selectedItem>
       <div class="flex items-center gap-2">
         <span [class]="'fi fi-' + selectedLanguage.countryCode"></span>
-        @if (!isMobile) {
+        @if (!showMobileLayout ) {
         <span> {{ selectedLanguage.label }}</span>
         }
       </div>
@@ -13,7 +13,7 @@
     <ng-template let-language #item>
       <div class="flex items-center gap-2">
         <span [class]="'fi fi-' + language.countryCode"></span>
-        @if (!isMobile) {
+        @if (!showMobileLayout ) {
         <span> {{ language.label }}</span>
         }
       </div>

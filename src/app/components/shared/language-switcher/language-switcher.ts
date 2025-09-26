@@ -27,7 +27,7 @@ export class LanguageSwitcher implements OnInit, OnDestroy {
   ]
 
   selectedLanguage: LanguageOption
-  isMobile = false
+  showMobileLayout = false
   private subscription: Subscription | null = null
 
   constructor(private transloco: TranslocoService, private languageService: LanguageService, private responsiveService: ResponsiveService) {
@@ -36,8 +36,8 @@ export class LanguageSwitcher implements OnInit, OnDestroy {
   }
 
   ngOnInit (): void {
-    this.subscription = this.responsiveService.isMobile$.subscribe((isMobile) => {
-      this.isMobile = isMobile
+    this.subscription = this.responsiveService.mobileViewChanges$.subscribe((isMobileLayout) => {
+      this.showMobileLayout = isMobileLayout
     })
   }
 
@@ -46,6 +46,6 @@ export class LanguageSwitcher implements OnInit, OnDestroy {
   }
 
   ngOnDestroy () {
-    this.subscription && this.subscription.unsubscribe()
+    this.subscription?.unsubscribe()
   }
 }

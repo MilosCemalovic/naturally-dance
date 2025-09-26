@@ -1,26 +1,42 @@
-import { Injectable } from '@angular/core'
+import { Injectable, OnDestroy } from '@angular/core'
 import { BehaviorSubject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
-export class ResponsiveService {
-  private isMobileSubject = new BehaviorSubject<boolean>(false)
+export class ResponsiveService implements OnDestroy {
+  private mobileViewSubject = new BehaviorSubject<boolean>(false)
 
-  public isMobile$ = this.isMobileSubject.asObservable()
+  public mobileViewChanges$ = this.mobileViewSubject.asObservable()
 
   private mobileWidth = window.innerWidth <= 900
 
+  private resizeListener!: () => void
+
   constructor() {
-    this.checkScreensSize()
-    window.addEventListener('resize', () => this.checkScreensSize())
+    this.initializeResponsiveListening()
   }
 
   private checkScreensSize () {
-    this.isMobileSubject.next(this.mobileWidth)
+    this.mobileViewSubject.next(this.mobileWidth)
   }
 
-  get isMobile (): boolean {
+  private initializeResponsiveListening () {
+    this.checkScreensSize()
+    this.setupResizeListener()
+  }
+
+  private setupResizeListener () {
+    this.resizeListener = () => this.checkScreensSize()
+    window.addEventListener('resize', this.resizeListener)
+  }
+
+  get isScreenMobile (): boolean {
     return this.mobileWidth
+  }
+
+  ngOnDestroy (): void {
+    this.resizeListener && window.removeEventListener('resize', this.resizeListener)
+    this.mobileViewSubject.complete()
   }
 }
