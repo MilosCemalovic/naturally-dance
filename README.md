@@ -1,6 +1,7 @@
 # NaturallyDance
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
+- Localized project using: Angular v20, PrimeNG v20 components, Prime icons, Flag icons, Routes, Lazy loading, Services, RxJS, Transloco i18n, image optimization etc.
+- This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.1.
 
 ## Development server
 
@@ -43,3 +44,28 @@ To execute unit tests with the [Karma](https://karma-runner.github.io) test runn
 ```bash
 ng test
 ```
+
+## About the Project
+
+This is Naturally Dance Belgrade project using:
+
+- Angular v20
+- PrimeNG v20
+- Prime icons
+- Flag icons
+- Transloco i18n (English-Serbian localization)
+- Routes from @angular/router
+- Lazy loading (via routing and HTML5)
+- Image optimization
+- Services
+- Decorators
+- Directives
+- RxJS
+
+## PrimeNG components
+
+- Menubar
+- Select
+- Card
+- ProgressSpinner
+- Button
