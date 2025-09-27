@@ -9,16 +9,15 @@ export class ResponsiveService implements OnDestroy {
 
   public mobileViewChanges$ = this.mobileViewSubject.asObservable()
 
-  private mobileWidth = window.innerWidth <= 900
-
-  private resizeListener!: () => void
+  private resizeListener!: () => void // Add exclamation mark tell TypeScript we'll initialize it
 
   constructor() {
     this.initializeResponsiveListening()
   }
 
   private checkScreensSize () {
-    this.mobileViewSubject.next(this.mobileWidth)
+    const isMobile = window.innerWidth <= 900
+    this.mobileViewSubject.next(isMobile)
   }
 
   private initializeResponsiveListening () {
@@ -32,7 +31,7 @@ export class ResponsiveService implements OnDestroy {
   }
 
   get isScreenMobile (): boolean {
-    return this.mobileWidth
+    return this.mobileViewSubject.value
   }
 
   ngOnDestroy (): void {
