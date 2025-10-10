@@ -100,6 +100,32 @@
       "description": "Diplomirala je sociologiju na Filozofskom fakultetu Univerziteta u Beogradu. Celog života se interesovala za ples, a njen veliki talenat i ljubav prema plesu otkrio je Miloš 2015. godine."
     }
   },
+  "discoParty": {
+    "title": "Beogradska Disko Žurka",
+    "description": "Naturally Dance je idejni tvorac i organizator Beogradska Disko Žurka - Belgrade Disco Fever 👉 najmasovnije DISKO Žurke u Srbiji i regionu! Beogradsku Disko Žurku je posetilo više hiljada ljudi svih generacija, nacionalnosti, pripadnosti, zanimanja i veroispovesti. Publika je Beogradsku Disko Žurku svrstala među najbolje kulturne manifestacije Beograda, ističući da je njenim dolaskom nastala revolucija u noćnom životu Beograda, jer se sve generacije, svi staleži, različitih preferncija zajedno provode đuskajući uz muziku koja je svojevremeno stvorila sličnu revoluciju."
+  },
+  "kizomba": {
+    "title": "Kizomba Flashmob u Beogradu",
+    "description": "Naturally Dance designed the choreography and realized the project Kizomba dance Flash mob - Belgrade, Serbia in which we promoted the culture of Africa with the culture of Serbia in Belgrade, on Republic Square with the National Museum, the National Theater and the monument to Knez Mihajlo. In the period from May 13th to July 17th 2018. Naturally Dance prepared and trained Ballroom and Salsa instructors and dancers, so that we can present and promote Kizomba dance with a public performance. Watch Kizomba dance Flash mob - Belgrade, Serbia to see the show."
+  },
+  "kizombaBanjaLuka": {
+    "title": "Kizomba u Bosni i Hercegovini",
+    "description": "Naturally Dance je 2016. godine 'posejao' kizombu u Bosni i Hercegovini. Više od dva meseca Naturally Dance tim - Sandra i Miloš - su putovali svakog vikenda u Banja Luku i držali časove mladim zaljubljenicima kizombe u Republici Srpskoj. Nakon Naturally Dance časova, kizomba je krenula da se širi po Bosni i Hercegovini!"
+  },
+  "common": {
+    "favorite": "Dodaj u omiljene",
+    "yes": "Da",
+    "no": "Ne"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "youtube": "YouTube"
+  },
+  "aria": {
+    "favorite": "Dodaj u omiljene",
+    "unfavorite": "Ukloni iz omiljenih"
+  },
   "footer": {
     "contact": "Kontakt",
     "rights": "Sva prava su zadržana."

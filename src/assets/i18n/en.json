@@ -100,6 +100,32 @@
       "description": "Graduated in Sociology at the Faculty of Philosophy, University of Belgrade. All her life she was interested in dance, and her great talent and love for dance was discovered by Miloš in 2015."
     }
   },
+  "discoParty": {
+    "title": "Belgrade Disco Fever Party",
+    "description": "Naturally Dance is the creator and organizer of the Beogradska Disko Žurka - Belgrade Disco Fever Party 👉 the most popular DISCO Party in Serbia and across the Balkan region! Beogradska Disko Žurka - Belgrade Disco Fever was visited by thousands of people of all generations, nationalities, affiliations, occupations and religions. The audience classified the Beogradska Disko Žurka - Belgrade Disco Fever Party among the best cultural manifestations of Belgrade, emphasizing that its arrival created a revolution in Belgrade's night life, because all generations of different preferences and background spend time together dancing to music that once created a similar revolution."
+  },
+  "kizomba": {
+    "title": "Belgrade Kizomba Flashmob",
+    "description": "Naturally Dance designed the choreography and realized the project Kizomba dance Flash mob - Belgrade, Serbia in which we promoted the culture of Africa with the culture of Serbia in Belgrade, on Republic Square with the National Museum, the National Theater and the monument to Knez Mihajlo. In the period from May 13th to July 17th 2018. Naturally Dance prepared and trained Ballroom and Salsa instructors and dancers, so that we can present and promote Kizomba dance with a public performance. Watch Kizomba dance Flash mob - Belgrade, Serbia to see the show."
+  },
+  "kizombaBanjaLuka": {
+    "title": "Kizomba in Bosnia and Herzegovina",
+    "description": "In 2016. Naturally Dance introduced Kizomba in Bosnia and Herzegovia. For more than two months, the Naturally Dance team - Sandra and Miloš - traveled every weekend to Banja Luka and provide dance workshops to young Kizomba lovers in the Republic of Srpska. After Naturally Dance teachings, Kizomba began to spread throughout Bosnia and Herzegovina!"
+  },
+  "common": {
+    "favorite": "Add to favorites",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "social": {
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "youtube": "YouTube"
+  },
+  "aria": {
+    "favorite": "Add to favorites",
+    "unfavorite": "Remove from favorites"
+  },
   "footer": {
     "contact": "Contact",
     "rights": "All rights reserved."
