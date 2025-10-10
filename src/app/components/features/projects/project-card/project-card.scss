@@ -1,0 +1,268 @@
+$text-color: #333;
+$surface-border: #e5e7eb;
+$surface-ground: #f8f9fa;
+$surface-hover: #e9ecef;
+$red-100: #ffe6e6;
+$red-600: #dc2626;
+$primary-color: #007bff;
+
+.project-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// Card content area - responsive layout
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 1rem;
+  height: 100%;
+}
+
+// Image container and styling
+.image-container {
+  flex-shrink: 0;
+  width: 100%;
+
+  &__image {
+    border-radius: inherit;
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+
+    @media (min-width: 480px) {
+      height: 250px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1024px) {
+      height: 150px;
+    }
+
+    @media (min-width: 1025px) {
+      height: 220px;
+    }
+  }
+}
+
+// Text content area
+.card-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 200px;
+
+  &__description {
+    margin: 0;
+    line-height: 1.6;
+    color: $text-color;
+    font-size: 0.95rem;
+    flex: 1;
+
+    @media (min-width: 768px) {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Social links styling
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  min-height: fit-content;
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+
+    // Focus styles for accessibility
+    &:focus {
+      outline: 2px solid #007bff;
+      outline-offset: 2px;
+    }
+
+    // Hover effects
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    // Platform-specific colors
+    &--facebook {
+      background-color: #1877f2;
+      color: white;
+
+      &:hover {
+        background-color: darken(#1877f2, 10%);
+      }
+    }
+
+    &--instagram {
+      background: radial-gradient(
+        circle at 30% 107%,
+        #fdf497 0%,
+        #fdf497 5%,
+        #fd5949 45%,
+        #d6249f 60%,
+        #285aeb 90%
+      );
+      color: white;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &--youtube {
+      background-color: #ff0000;
+      color: white;
+
+      &:hover {
+        background-color: darken(#ff0000, 10%);
+      }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 480px) {
+      flex: 1;
+      min-width: calc(50% - 0.375rem);
+      justify-content: center;
+    }
+  }
+
+  &__icon {
+    font-size: 1.1rem;
+  }
+}
+
+.social-links__text,
+.favorite-btn__text,
+.favorite-text {
+  @media (max-width: 380px) {
+    display: none; // Hide text on very small screens, icons only
+  }
+}
+
+// Card footer styling
+.card-footer {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid $surface-border;
+  display: grid;
+  justify-items: start;
+  gap: 0.75rem;
+
+  .favorite-text {
+    margin: 0;
+  }
+
+  .favorite-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    background: $surface-ground;
+    color: $text-color;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $surface-hover;
+    }
+
+    &:focus {
+      outline: 2px solid $primary-color;
+      outline-offset: 2px;
+    }
+
+    &--active {
+      background: $red-100;
+      color: $red-600;
+    }
+
+    &__icon {
+      color: $red-600;
+    }
+  }
+}
+
+// PrimeNG Card overrides for better responsiveness
+::ng-deep {
+  .p-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &-body {
+      flex: 1;
+      display: flex;
+      border-radius: inherit;
+      flex-direction: column;
+    }
+
+    &-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+  }
+}
+
+// Horizontal layout on larger screens
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card-content {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .image-container {
+    width: 45%;
+    display: flex;
+    align-items: center;
+  }
+
+  .card-text {
+    width: 55%;
+    // Reset min-height for horizontal layout
+    min-height: auto;
+  }
+}
+
+// Back to vertical for very large screens if needed
+@media (min-width: 1225px) {
+  .card-content {
+    flex-direction: column;
+  }
+
+  .image-container {
+    width: 100%;
+  }
+
+  .card-text {
+    width: 100%;
+  }
+}

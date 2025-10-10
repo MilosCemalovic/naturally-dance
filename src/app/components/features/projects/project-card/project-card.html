@@ -1,0 +1,57 @@
+<div class="project-card">
+  <p-card [header]="project().title | transloco"
+    class="h-full">
+    <div class="card-content">
+      <div class="image-container">
+        <img [src]="project().imageUrl"
+          [alt]="project().title | transloco"
+          class="image-container__image"
+          loading="lazy" />
+      </div>
+
+      <div class="card-text">
+        <p class="card-text__description">
+          {{project().description | transloco}}
+        </p>
+
+        <div class="social-links"
+          aria-label="Social media links">
+
+          @for (link of project().socialLinks;
+          track trackBy($index, link)) {
+          <a [href]="link.url" target="_blank"
+            class="social-links__link social-links__link--{{link.platform}}"
+            [attr.aria-label]="'social.'+link.platform"
+            rel="noopener noreferrer"
+            (click)="openLink($event, link.url)">
+            <i
+              [class]="link.icon + ' social-links__icon'"></i>
+            <span class="social-links__text">
+              {{ ('social.' + link.platform) | transloco }}
+            </span>
+          </a>
+          }
+        </div>
+      </div>
+    </div>
+
+    <ng-template #footer>
+      <div class="card-footer">
+        <p class="favorite-text">
+          {{'common.favorite' | transloco}}
+        </p>
+        <button (click)="toggleFavorite()"
+          [class.favorite.btn--active]="isFavorite()"
+          class="favorite-btn"
+          [attr.aria-label]="(isFavorite() ? 'aria.unfavorite' : 'aria.favorite') | transloco"
+          type="button">
+          <i [class]="isFavorite() ? 'pi pi-heart-fill' : 'pi pi-heart'"
+            class="favorite-btn__icon"></i>
+          <span
+            class="favorite-btn__text">{{ (isFavorite() ? 'common.yes' : 'common.no') | transloco }}</span>
+        </button>
+      </div>
+    </ng-template>
+
+  </p-card>
+</div>
