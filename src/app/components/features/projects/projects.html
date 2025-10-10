@@ -1,1 +1,7 @@
-<p>projects works!</p>
+<div class="projects-container">
+  @for (project of projects(); track project.id) {
+  <app-project-card [project]="project"
+    [isFavorite]="favoriteProjects()[project.id]"
+    (isFavoriteChange)="updateFavorite(project.id, $event)" />
+  }
+</div>

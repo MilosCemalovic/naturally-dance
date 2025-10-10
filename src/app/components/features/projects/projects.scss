@@ -1,0 +1,21 @@
+// Container for all project cards
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  // Mobile styles
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+
+  // Desktop styles
+  @media (min-width: 1025px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
