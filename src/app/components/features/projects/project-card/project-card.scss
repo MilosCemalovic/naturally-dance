@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 $text-color: #333;
 $surface-border: #e5e7eb;
 $surface-ground: #f8f9fa;
@@ -5,6 +7,9 @@ $surface-hover: #e9ecef;
 $red-100: #ffe6e6;
 $red-600: #dc2626;
 $primary-color: #007bff;
+$facebook-color: #1877f2;
+$youtube-color: #ff0000;
+$lightness: -10%;
 
 .project-card {
   height: 100%;
@@ -12,11 +17,8 @@ $primary-color: #007bff;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 8px;
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 // Card content area - responsive layout
@@ -110,11 +112,11 @@ $primary-color: #007bff;
 
     // Platform-specific colors
     &--facebook {
-      background-color: #1877f2;
+      background-color: $facebook-color;
       color: white;
 
       &:hover {
-        background-color: darken(#1877f2, 10%);
+        background-color: color.adjust($facebook-color, $lightness: $lightness);
       }
     }
 
@@ -135,11 +137,11 @@ $primary-color: #007bff;
     }
 
     &--youtube {
-      background-color: #ff0000;
+      background-color: $youtube-color;
       color: white;
 
       &:hover {
-        background-color: darken(#ff0000, 10%);
+        background-color: color.adjust($youtube-color, $lightness: $lightness);
       }
     }
 
@@ -213,7 +215,7 @@ $primary-color: #007bff;
 ::ng-deep {
   .p-card {
     height: 100%;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
 
     &-body {
