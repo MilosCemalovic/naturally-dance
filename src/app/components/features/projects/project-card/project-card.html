@@ -20,8 +20,7 @@
           aria-label="Social media links">
 
           @for (link of project().socialLinks;
-          track trackBy($index, link); let i =
-          $index) {
+          track trackBy($index, link)) {
           @let samePlatformLinks =
           getSamePlatformLinks(link.platform);
 
