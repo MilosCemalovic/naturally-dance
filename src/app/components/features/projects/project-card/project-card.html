@@ -4,6 +4,8 @@
     <div class="card-content">
       <div class="image-container">
         <img [src]="project().imageUrl"
+          [srcset]="project().imageSrcSet"
+          sizes="(max-width: 600px) 400px, (max-width: 900px) 800px, 1200px"
           [alt]="project().title | transloco"
           class="image-container__image"
           loading="lazy" />
@@ -18,7 +20,11 @@
           aria-label="Social media links">
 
           @for (link of project().socialLinks;
-          track trackBy($index, link)) {
+          track trackBy($index, link); let i =
+          $index) {
+          @let samePlatformLinks =
+          getSamePlatformLinks(link.platform);
+
           <a [href]="link.url" target="_blank"
             class="social-links__link social-links__link--{{link.platform}}"
             [attr.aria-label]="'social.'+link.platform"
@@ -27,7 +33,7 @@
             <i
               [class]="link.icon + ' social-links__icon'"></i>
             <span class="social-links__text">
-              {{ ('social.' + link.platform) | transloco }}
+              {{ samePlatformLinks.length > 1 ? ((`social.${link.platform}`) | transloco) + `-${getPlatformLinkIndex(samePlatformLinks, link)}` : ((`social.${link.platform}`) | transloco) }}
             </span>
           </a>
           }

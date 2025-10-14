@@ -27,6 +27,14 @@ export class ProjectCard {
     return `${ index }-${ item.platform }-${ item.url }`
   }
 
+  getSamePlatformLinks (platform: string): SocialLink[] {
+    return this.project().socialLinks.filter(link => link.platform === platform)
+  }
+
+  getPlatformLinkIndex (platformLinks: SocialLink[], currentLink: SocialLink): number {
+    return platformLinks.indexOf(currentLink) + 1
+  }
+
   // Toggle favorite state
   toggleFavorite () {
     const newValue = !this.isFavorite()
